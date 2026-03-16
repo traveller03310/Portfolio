@@ -7,11 +7,11 @@
     <style>
         /* --- CSS VARIABLES & RESET --- */
         :root {
-            --bg-color: #0f172a;       /* Dark Slate */
-            --card-bg: #1e293b;        /* Lighter Slate */
-            --text-main: #f1f5f9;      /* White-ish */
-            --text-muted: #94a3b8;     /* Grey */
-            --accent: #38bdf8;         /* Sky Blue */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
             --font-main: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
@@ -27,13 +27,7 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
-        /* --- LAYOUT UTILITIES --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         section { padding: 80px 0; }
 
         /* --- HEADER --- */
@@ -48,19 +42,13 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
         .logo span { color: var(--accent); }
-
         .nav-links { display: flex; gap: 30px; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -69,25 +57,14 @@
             align-items: flex-start;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
         .hero h1 span {
             background: linear-gradient(to right, var(--accent), #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 30px; }
 
         .btn {
             display: inline-block;
@@ -97,17 +74,10 @@
             font-weight: 600;
             border-radius: 5px;
         }
-
         .btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
         /* --- SKILLS --- */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
         .skill-tag {
             background: var(--card-bg);
             padding: 8px 16px;
@@ -117,12 +87,10 @@
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        /* --- PROJECTS --- */
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
+        /* --- SECTION TITLE --- */
+        .section-title { font-size: 2rem; margin-bottom: 40px; }
 
+        /* --- PROJECTS --- */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -136,21 +104,66 @@
             border: 1px solid rgba(255,255,255,0.05);
             transition: 0.3s;
         }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .project-card h3 { margin-bottom: 10px; font-size: 1.4rem; }
         .project-card p { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
-        
-        .project-links a {
-            font-size: 0.9rem;
-            margin-right: 15px;
-            font-weight: 600;
-            border-bottom: 1px solid var(--accent);
+        .project-links a { font-size: 0.9rem; margin-right: 15px; font-weight: 600; border-bottom: 1px solid var(--accent); }
+
+        /* --- CODING PROFILES --- */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--profile-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .profile-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            background: color-mix(in srgb, var(--profile-color) 15%, transparent);
+            border: 1px solid color-mix(in srgb, var(--profile-color) 40%, transparent);
+        }
+
+        .profile-info h3 { font-size: 1.1rem; margin-bottom: 4px; }
+        .profile-info .handle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .profile-info .rating {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--profile-color);
+        }
+
+        /* Per-card accent colors */
+        .profile-card.codeforces { --profile-color: #1890ff; }
+        .profile-card.codechef   { --profile-color: #f5a623; }
+        .profile-card.leetcode   { --profile-color: #ffa116; }
 
         /* --- FOOTER --- */
         footer {
@@ -164,7 +177,7 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simple hide for mobile for this demo */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -176,6 +189,7 @@
                 <a href="#" class="logo">Upanshu<span>.dev</span></a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#profiles">Profiles</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -216,41 +230,80 @@
         </div>
     </section>
 
+    <!-- ===== CODING PROFILES ===== -->
+    <section id="profiles" class="container">
+        <h2 class="section-title">Coding Profiles</h2>
+        <div class="profiles-grid">
+
+            <a href="https://codeforces.com/profile/stevie_x" target="_blank" class="profile-card codeforces">
+                <div class="profile-icon">
+                    <!-- Codeforces logo SVG -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="10" width="4" height="12" rx="1" fill="#1890ff"/>
+                        <rect x="10" y="6" width="4" height="16" rx="1" fill="#c0392b"/>
+                        <rect x="18" y="2" width="4" height="20" rx="1" fill="#1890ff"/>
+                    </svg>
+                </div>
+                <div class="profile-info">
+                    <h3>Codeforces</h3>
+                    <div class="handle">@stevie_x</div>
+                    <div class="rating">Pupil · Rating: XXXX</div>
+                </div>
+            </a>
+
+            <a href="https://www.codechef.com/users/stevie_x" target="_blank" class="profile-card codechef">
+                <div class="profile-icon">
+                    <!-- CodeChef chef hat icon -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C9.5 2 7.5 3.8 7.2 6.1C6.1 6.4 5 7.4 5 8.7C5 10.1 6.1 11.2 7.4 11.4V18C7.4 19.1 8.3 20 9.4 20H14.6C15.7 20 16.6 19.1 16.6 18V11.4C17.9 11.2 19 10.1 19 8.7C19 7.4 17.9 6.4 16.8 6.1C16.5 3.8 14.5 2 12 2Z" fill="#f5a623"/>
+                        <rect x="9" y="20" width="6" height="2" rx="1" fill="#f5a623"/>
+                    </svg>
+                </div>
+                <div class="profile-info">
+                    <h3>CodeChef</h3>
+                    <div class="handle">@stevie_x</div>
+                    <div class="rating">★★★ · Rating: XXXX</div>
+                </div>
+            </a>
+
+            <a href="https://leetcode.com/u/stevie_x/" target="_blank" class="profile-card leetcode">
+                <div class="profile-icon">
+                    <!-- LeetCode icon -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 3L7 12.5H13L10.5 21L18 10.5H12L13.5 3Z" fill="#ffa116"/>
+                    </svg>
+                </div>
+                <div class="profile-info">
+                    <h3>LeetCode</h3>
+                    <div class="handle">@stevie_x</div>
+                    <div class="rating">XXX problems solved</div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <!-- ===== END CODING PROFILES ===== -->
+
     <section id="projects" class="container">
         <h2 class="section-title">Some Things I've Built</h2>
         <div class="project-grid">
             
             <div class="project-card">
                 <h3>Portfolio Website</h3>
-                <p>
-                    A clean, dark-mode portfolio website built with raw HTML and CSS 
-                    to showcase my projects and technical skills. Optimized for performance.
-                </p>
-                <div class="project-links">
-                    <a href="#">View Code</a>
-                    </div>
+                <p>A clean, dark-mode portfolio website built with raw HTML and CSS to showcase my projects and technical skills. Optimized for performance.</p>
+                <div class="project-links"><a href="#">View Code</a></div>
             </div>
 
             <div class="project-card">
-                <h3>Library Management System</h3>
-                <p>
-                    A C++ console application that manages book inventory, user records, 
-                    and fine calculations using object-oriented programming principles.
-                </p>
-                <div class="project-links">
-                    <a href="#">View Code</a>
-                </div>
+                <h3>C++ Multi-Agent Crypto Trading Simulator</h3>
+                <p>A high-performance C++ simulator featuring multiple autonomous trading agents competing in a simulated crypto market, built with concurrency and OOP principles.</p>
+                <div class="project-links"><a href="https://github.com/traveller03310/Cpp-Multi-Agent-Trading-Simulator" target="_blank">View Code</a></div>
             </div>
 
             <div class="project-card">
-                <h3>Weather App</h3>
-                <p>
-                    A simple web application that fetches real-time weather data 
-                    using a public API and displays it in a user-friendly interface.
-                </p>
-                <div class="project-links">
-                    <a href="#">View Code</a>
-                </div>
+                <h3>DSA Visualizer</h3>
+                <p>An interactive web-based tool to visualize common data structures and algorithms in real time, making it easier to understand and learn complex CS concepts.</p>
+                <div class="project-links"><a href="https://github.com/traveller03310/DSA-visualizer" target="_blank">View Code</a></div>
             </div>
 
         </div>
@@ -262,7 +315,7 @@
             I am currently looking for internship opportunities or freelance projects. 
             Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
-        <a href="mailto:your-email@example.com" class="btn">Say Hello</a>
+        <a href="https://www.linkedin.com/in/upanshu-smit-919152222/" target="_blank" class="btn">Say Hello</a>
     </section>
 
     <footer>
